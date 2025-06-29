@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,10 +21,12 @@ import com.Rapido.Automobile.model.Product;
 	    @Autowired
 	    private ProductsService service;
 
-		/*
-		 * @PostMapping public Product addProduct(@RequestBody Product product) { return
-		 * service.saveProduct(product); }
-		 */
+		
+		  @PostMapping public Product addProduct(@RequestBody Product product) {
+			  
+		 System.out.println("Add Product : ");
+		 return service.saveProduct(product); }
+		 
 
 	    @GetMapping
 	    public List<Product> findAllProducts() {

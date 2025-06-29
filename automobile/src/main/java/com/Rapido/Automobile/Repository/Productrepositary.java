@@ -38,12 +38,11 @@ import com.Rapido.Automobile.model.Product;
 	        return list.stream().filter(x -> x.getName().startsWith(name)).collect(Collectors.toList());
 	    }
 
-		/*
-		 * public Product save(Product p) { Product product = new Product();
-		 * product.setId(p.getId()); product.setName(p.getName());
-		 * product.setQuantity(p.getQuantity()); product.setPrice(p.getPrice());
-		 * list.add(product); return product; }
-		 */
+		
+		  public Product save(Product p) { 
+			 
+		  list.add(p); return p; }
+		 
 	    public String delete(Integer id) {
 	        list.removeIf(x -> x.getId() == (id));
 	        return null;
